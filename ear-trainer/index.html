@@ -1,95 +1,171 @@
 <!DOCTYPE html>
+<!-- The Ear Trainer's home page. Support is support.html; the smart link for reels is get/. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pawry — Support</title>
+<meta name="theme-color" content="#F8EAD6">
+<title>Pawry: Ear Trainer. Learn to play by ear.</title>
+<meta name="description" content="Most ear training teaches you distances. Pawry teaches you places: where each note sits in the key. A few minutes a day, on iPhone.">
+<meta property="og:title" content="Pawry: Ear Trainer. Learn to play by ear.">
+<meta property="og:description" content="Hear where every note belongs, a few minutes a day.">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/icon.png">
 <style>
-:root { --bg:#ffffff; --fg:#1d1d1f; --muted:#6e6e73; --accent:#e8590c; --rule:#e5e5ea; }
-@media (prefers-color-scheme: dark) {
-  :root { --bg:#111113; --fg:#f2f2f4; --muted:#9a9aa0; --accent:#ff8a3d; --rule:#2c2c30; }
-}
+:root { --bg:#F8EAD6; --card:#FDF6EA; --fg:#2E1F16; --muted:#6F5A4B; --accent:#B4501F; --accent-d:#8C3A12; --line:#E9D6BC; --soft:#F1DEC3; }
 * { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
 body { margin:0; background:var(--bg); color:var(--fg);
-  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font: 17px/1.6 ui-rounded, "SF Pro Rounded", "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased; }
-main { max-width: 40rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
-h1 { font-size: 1.7rem; line-height:1.25; margin: 0 0 1rem; }
-h2 { font-size: 1.15rem; margin: 2.2rem 0 .6rem; }
-h3 { font-size: 1rem; margin: 1.4rem 0 .3rem; }
-.lede { font-size: 1.15rem; }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-hr { border:none; border-top:1px solid var(--rule); margin:2.5rem 0; }
-footer { color:var(--muted); font-size:.9rem; }
+h1, h2, h3, p, ul, ol { margin:0; }
+a { color: var(--accent); }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.top { display:flex; align-items:center; justify-content:space-between; padding-top:20px; padding-bottom:8px; }
+.mark { display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.1rem; color:var(--fg); text-decoration:none; }
+.mark img { width:36px; height:36px; border-radius:9px; }
+.top nav { display:flex; gap:6px; }
+.top nav a { padding:8px 14px; border-radius:999px; font-weight:700; font-size:.95rem; color:var(--fg); text-decoration:none; }
+.top nav a:hover { background:var(--soft); }
+
+.hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,320px); gap:56px; align-items:center; padding-top:44px; padding-bottom:72px; }
+.eyebrow { font-weight:800; font-size:.85rem; letter-spacing:.14em; color:var(--accent); }
+.hero h1 { margin-top:12px; font-size:clamp(2.5rem, 6.2vw, 4.1rem); line-height:1.04; letter-spacing:-.02em; font-weight:900; }
+.lede { margin-top:18px; max-width:31em; font-size:1.18rem; color:var(--muted); }
+.lede b { color:var(--fg); }
+.stores { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+.btn { display:inline-flex; flex-direction:column; align-items:center; justify-content:center; min-height:58px; padding:9px 26px; border-radius:16px;
+  background:var(--accent); color:#fff; font-weight:800; font-size:1.1rem; line-height:1.15; text-decoration:none; box-shadow:0 4px 0 var(--accent-d); }
+.btn small { font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; opacity:.85; font-weight:800; white-space:nowrap; }
+.btn:active { transform:translateY(4px); box-shadow:none; }
+.btn.soon { background:var(--soft); color:var(--muted); box-shadow:0 4px 0 var(--line); cursor:default; }
+.note { margin-top:16px; font-size:.92rem; color:var(--muted); }
+a:focus-visible { outline:3px solid var(--fg); outline-offset:3px; }
+
+.phone { border-radius:44px; border:9px solid var(--fg); overflow:hidden; background:var(--fg); box-shadow:0 26px 60px rgba(88, 52, 20, .28); }
+.phone img { display:block; width:100%; height:auto; }
+
+.band { background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:64px 0 68px; }
+h2 { font-size:clamp(1.7rem, 3.6vw, 2.3rem); line-height:1.12; letter-spacing:-.01em; font-weight:900; text-align:center; }
+.sub { max-width:36em; margin:12px auto 0; text-align:center; color:var(--muted); }
+.steps { list-style:none; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:34px; }
+.steps li { padding:24px; border-radius:22px; background:var(--bg); border:1px solid var(--line); }
+.steps b { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--accent); color:#fff; font-weight:900; font-size:1.15rem; }
+.steps h3 { margin-top:14px; font-size:1.2rem; line-height:1.2; }
+.steps p { margin-top:6px; color:var(--muted); }
+
+.sect { padding:64px 0; }
+.ex { list-style:none; padding:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 18px; max-width:760px; margin:32px auto 0; }
+.ex li { padding:14px 18px; border-radius:16px; background:var(--card); border:1px solid var(--line); }
+.ex b { display:block; }
+.ex span { color:var(--muted); font-size:.95rem; }
+
+.shots { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; max-width:860px; margin:36px auto 0; }
+.shots figure { margin:0; }
+.shots .phone { border-width:7px; border-radius:34px; }
+.shots figcaption { margin-top:14px; text-align:center; }
+.shots figcaption b { display:block; }
+.shots figcaption span { color:var(--muted); font-size:.95rem; }
+
+.last { text-align:center; padding-bottom:72px; }
+.last .stores { justify-content:center; }
+.foot { border-top:1px solid var(--line); padding:30px 0 40px; text-align:center; font-size:.95rem; color:var(--muted); }
+.foot nav { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 24px; margin-bottom:10px; }
+.foot a { color:var(--fg); font-weight:700; text-decoration:none; }
+.foot a:hover { text-decoration:underline; }
+
+@media (max-width: 820px) {
+  .hero { grid-template-columns:minmax(0,1fr); gap:40px; padding-top:28px; padding-bottom:56px; }
+  .hero .phone { max-width:300px; margin:0 auto; }
+  .steps { grid-template-columns:minmax(0,1fr); }
+  .ex { grid-template-columns:minmax(0,1fr); }
+  .shots { grid-template-columns:minmax(0,1fr); max-width:280px; }
+  .stores .btn { flex:1 1 150px; }
+}
 </style>
 </head>
 <body>
+<header class="wrap top">
+  <a class="mark" href="./"><img src="img/icon.png" alt="">Pawry: Ear Trainer</a>
+  <nav><a href="support.html">Support</a></nav>
+</header>
+
 <main>
-<h1>Pawry Support</h1>
-<p class="lede">Pawry: Ear Trainer is a functional ear-training app for iPhone and
-Android. It teaches you to hear each note's place in the key, not just the
-distances between notes.</p>
+<section class="wrap hero">
+  <div>
+    <p class="eyebrow">A FEW MINUTES A DAY</p>
+    <h1>Learn to play by ear</h1>
+    <p class="lede"><b>Most ear training teaches you distances. Pawry teaches you places.</b> When you're playing, what you need to know is where the note sits in the key. Is that the third? The seventh?</p>
+    <div class="stores">
+      <a class="btn" href="https://apps.apple.com/app/id6789950268"><small>Get it for</small>iPhone</a>
+      <span class="btn soon"><small>Coming soon to</small>Android</span>
+    </div>
+    <p class="note">No account, no ads, no analytics. One purchase unlocks everything. No subscription.</p>
+  </div>
+  <div class="phone"><img src="img/feedback.jpg" width="600" height="1304" alt="The app after a wrong answer: the note you heard was Re, the second note of the scale, shown on a ladder above Do, the home note."></div>
+</section>
 
-<h2>Get help</h2>
-<p>The fastest way to reach us is to
-<a href="https://github.com/pallabez/eartrainer-support/issues">open an issue on GitHub</a>.
-Bug reports, questions and feature requests are all welcome. Please say whether
-you use the iPhone or the Android app.</p>
+<section class="band">
+  <div class="wrap">
+    <h2>How a question goes</h2>
+    <ol class="steps">
+      <li><b>1</b><h3>The key is planted</h3><p>A short chord progression puts the key in your ear.</p></li>
+      <li><b>2</b><h3>One note plays</h3><p>You name its place: Do, Re, Mi…</p></li>
+      <li><b>3</b><h3>The note walks home</h3><p>Step by step to the tonic, so you hear why it is what it is.</p></li>
+    </ol>
+  </div>
+</section>
 
-<h2>Common questions</h2>
+<section class="wrap sect">
+  <h2>Eight exercises</h2>
+  <p class="sub">New to this? Listening Basics is a free, gentle course that starts from zero: higher or lower, same or different, steps and jumps.</p>
+  <ul class="ex">
+    <li><b>Scale Degrees</b><span>Cadence, note, resolution</span></li>
+    <li><b>Intervals</b><span>Ascending, descending and harmonic</span></li>
+    <li><b>Intervals in Context</b><span>The same intervals, anchored inside a key</span></li>
+    <li><b>Chords</b><span>11 qualities, inversions, block or arpeggiated</span></li>
+    <li><b>Chord Progressions</b><span>Name every chord by Roman numeral</span></li>
+    <li><b>Melodic Dictation</b><span>Hear a melody, name every note</span></li>
+    <li><b>Scales</b><span>Major, the three minors and the five modes</span></li>
+    <li><b>Perfect Pitch</b><span>One note, no context, name it</span></li>
+  </ul>
+</section>
 
-<h3>Where is my practice data?</h3>
-<p>On your device, and only there. Pawry has no accounts and sends nothing to us.
-See the privacy policy for <a href="privacy.html">iPhone</a> or
-<a href="privacy-android.html">Android</a>.</p>
+<section class="band">
+  <div class="wrap">
+    <h2>A path, not a grab bag</h2>
+    <div class="shots">
+      <figure><div class="phone"><img src="img/question.jpg" width="600" height="1304" loading="lazy" alt="A Scale Degrees question: listen, then pick a number from 1 to 7."></div>
+        <figcaption><b>Short sessions</b><span>A daily goal, an optional reminder and a streak.</span></figcaption></figure>
+      <figure><div class="phone"><img src="img/levels.jpg" width="600" height="1304" loading="lazy" alt="The list of levels for an exercise."></div>
+        <figcaption><b>Curated levels</b><span>Pass a level, unlock the next. Or build your own drill.</span></figcaption></figure>
+      <figure><div class="phone"><img src="img/stats.jpg" width="600" height="1304" loading="lazy" alt="The progress screen with accuracy over time."></div>
+        <figcaption><b>Practice that adapts</b><span>Pawry notices what you mix up and asks it more often.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
 
-<h3>How do I restore my purchase?</h3>
-<p><strong>iPhone:</strong> open any locked exercise or level and tap
-<strong>Restore Purchase</strong> on the unlock screen. It uses the Apple&nbsp;ID
-already signed into the App&nbsp;Store on your device.</p>
-<p><strong>Android:</strong> tap <strong>Restore purchase</strong> on the unlock
-screen or in the app's Settings. It uses the Google account signed into
-Google&nbsp;Play on your phone.</p>
-
-<h3>Does the unlock work for my family?</h3>
-<p><strong>iPhone:</strong> yes. The one-time unlock has Family Sharing enabled, so
-everyone in your App&nbsp;Store family group gets it with your single purchase.</p>
-<p><strong>Android:</strong> the unlock belongs to the Google account that bought it.</p>
-
-<h3>No sound?</h3>
-<p><strong>iPhone:</strong> Pawry plays audio even with the ring/silent switch on.
-If you hear nothing, check the volume buttons and whether your audio is routed to a
-Bluetooth device (AirPods in another room are the usual culprit).</p>
-<p><strong>Android:</strong> Pawry plays through the media volume. Turn it up with
-the volume buttons while the app is open, and check for a connected Bluetooth
-device.</p>
-
-<h2>Privacy</h2>
-<p>Pawry: Ear Trainer collects nothing. Read the full privacy policy for
-<a href="privacy.html">iPhone</a> or <a href="privacy-android.html">Android</a>.</p>
-
-<h2>Pawry: Ear Game</h2>
-<p>Pawry: Ear Game is a game for iPhone: a band of kittens plays a song, one of
-them plays it wrong, and you tap the one you heard. For help, use the same
-<a href="https://github.com/pallabez/eartrainer-support/issues">GitHub page</a>
-and say that you play the Ear Game.</p>
-
-<h3>No sound in the game?</h3>
-<p>Check the volume buttons, the Sound button on the game's home screen, and
-whether your audio is routed to a Bluetooth device.</p>
-
-<h3>Can I get my trophies back on a new phone?</h3>
-<p>Not yet. Trophies live on the phone the game was played on, and a reinstall
-starts again.</p>
-
-<h3>What does the game collect?</h3>
-<p>How the game is played and the player name you choose, tied to a random id.
-No account, no ads, no tracking. Read the
-<a href="privacy-ear-game.html">Ear Game privacy policy</a>.</p>
-
-<hr>
-<footer>Pawry: Ear Trainer, for iPhone and Android.</footer>
+<section class="wrap sect last">
+  <h2>Start with a few minutes today</h2>
+  <p class="sub">Listening Basics and the first level of every exercise are free.</p>
+  <div class="stores">
+    <a class="btn" href="https://apps.apple.com/app/id6789950268"><small>Get it for</small>iPhone</a>
+    <span class="btn soon"><small>Coming soon to</small>Android</span>
+  </div>
+</section>
 </main>
+
+<footer class="foot">
+  <div class="wrap">
+    <nav>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy (iPhone)</a>
+      <a href="privacy-android.html">Privacy (Android)</a>
+      <a href="../ear-game/">Pawry: Ear Game</a>
+      <a href="../">Pawry</a>
+    </nav>
+    <p>© 2026 Pawry</p>
+  </div>
+</footer>
 </body>
 </html>
