@@ -1,4 +1,4 @@
-import"./site-75tSBnH7.js";import{c as u,s as d,a as g,L as l,d as p}from"./scene-DGeq2lMJ.js";const a="../",h=new URLSearchParams(location.search),o=h.get("as"),s=o==="ios"||o==="android"?o:p(navigator.userAgent,navigator.maxTouchPoints),b=u(document.documentElement.dataset.src??h.get("src")),e=document.getElementById("get");if(s==="other"||!e)location.replace(a);else{const n=s==="ios"?"iPhone":"Android",m=s==="ios"?"App Store":"Google Play",t=d(s,l,b);e.innerHTML=t?`<div class="thumb"></div>
+import"./site-75tSBnH7.js";import{c as u,s as d,a as g,L as l,d as p}from"./scene-mvFrrJlI.js";const a="../",h=new URLSearchParams(location.search),o=h.get("as"),s=o==="ios"||o==="android"?o:p(navigator.userAgent,navigator.maxTouchPoints),b=u(document.documentElement.dataset.src??h.get("src")),e=document.getElementById("get");if(s==="other"||!e)location.replace(a);else{const n=s==="ios"?"iPhone":"Android",m=s==="ios"?"App Store":"Google Play",t=d(s,l,b);e.innerHTML=t?`<div class="thumb"></div>
        <h1>Opening ${m}…</h1>
        <p>If nothing happens, tap the button.</p>
        <a class="btn" id="go">Get Pawry: Ear Game</a>
