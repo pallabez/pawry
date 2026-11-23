@@ -1,1 +1,0 @@
-import"./site-75tSBnH7.js";import{L as t,s as i,a as o}from"./scene-mvFrrJlI.js";document.querySelectorAll("[data-link]").forEach(e=>{e.dataset.link==="youtube"&&(e.href=t.youtube),e.dataset.link==="earTrainerIos"&&(e.href=t.earTrainerIos),e.dataset.link==="ios"&&(e.href=i("ios",t,"site")??"ear-game/")});const r=document.querySelector(".thumb");r&&o(r);
